@@ -31,13 +31,13 @@ CSDN 账号过一段时间就会累积几十个下载过但是未评论打分的
 
 使用 Fiddler 把*登录 - 到待评论页面 - 评论*的完整流程抓了一下，整理程序逻辑大致如下：
 
-_注：如下 HTTP 请求均使用同一个 SESSION。_
+*注：如下 HTTP 请求均使用同一个 SESSION。*
 
 1. 手动输入 CSDN 的用户名和密码。
 
 2. 用 `GET` 方法从 https://passport.csdn.net/account/login 页面获取 `lt`、`execution` 和 `_eventId` 等参数。
 
-3. 将第 1 步中的用户名和密码，还有第 2 步中得到的参数 `POST` 给 https://passport.csdn.net/account/login ，从 Response 中判断是否登录成功——我采用的依据是 status_code 为 200 且 Reponse 内容中有 `lastLoginIP`。
+3. 将第 1 步中的用户名和密码，还有第 2 步中得到的参数 `POST` 给 https://passport.csdn.net/account/login ，从 Response 中判断是否登录成功——我采用的依据是 status\_code 为 200 且 Reponse 内容中有 `lastLoginIP`。
 
 4. 用 `GET` 方法从 http://download.csdn.net/my/downloads 页面获取已下载资源总页数。从最后一个 `pageliststy` 的 `href` 中得到。
 
@@ -68,11 +68,11 @@ _注：如下 HTTP 请求均使用同一个 SESSION。_
 
 （Gist 前几天被伟大的墙封了，还是直接贴上代码吧。2014/11/5 update）
 
-（GitHub 仓库：[mzlogin/csdncommenter](https://github.com/mzlogin/csdncommenter)，现在可以通过 pip 安装使用了 `pip install csdncommenter` 然后 `csdncommenter`。2015/10/27 update）
+（GitHub 仓库：[mzlogin/csdncommenter](https://github.com/mzlogin/csdncommenter)，现在可以通过 pip 安装使用了  `pip install csdncommenter`  然后  `csdncommenter`。2015/10/27 update）
 
 ```python
 # File   : csdncommenter.py
-# Author : Kim Phu
+# Author : Zhuang Ma
 # E-mail : chumpma(at)gmail.com
 # Website: https://mazhuang.org
 # Date   : 2016-07-26
