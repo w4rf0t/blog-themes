@@ -26,7 +26,3 @@ jobs:
         
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.6.2
-        with:
-          BRANCH: built
-          FOLDER: _site
-          CLEAN: true
