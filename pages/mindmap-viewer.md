@@ -2,6 +2,6 @@
 layout: mindmap
 title: mindmap
 keywords: mindmap
-description: View the brain map in full screen
+description: 全屏查看脑图
 permalink: /mindmap-viewer/
 ---

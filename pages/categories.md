@@ -1,10 +1,10 @@
 ---
 layout: categories
 title: Categories
-description: haha you found my article gene bank
-keywords: categories
+description: 哈哈，你找到了我的文章基因库
+keywords: 分类
 comments: false
-menu: Categories
+menu: 分类
 permalink: /categories/
 ---
 

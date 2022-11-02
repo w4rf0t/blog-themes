@@ -1,14 +1,14 @@
 ---
 layout: page
 title: Fragments
-description: fragments index page
+description: fragments 索引页
 keywords: fragments
 comments: false
-menu: Fragments
+menu: 片段
 permalink: /fragments/
 ---
 
-> Fragments of knowledge, brief opinions, are gathered here as fragments.
+> 零散的知识，简短的观点，作为片段汇集于此。
 
 <a href="{{ site.url }}/fragments/">全部 <span class="octicon octicon-chevron-right"></span></a>
 
