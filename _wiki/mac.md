@@ -79,10 +79,10 @@ Cmd --> Command
 
 | 按键 / 命令    | 描述                                       |
 |----------------|--------------------------------------------|
-| cd             | Home 目录                                  |
-| cd [folder]    | 切换目录                                   |
-| cd ~           | Home 目录，例如 'cd ~/folder/'             |
-| cd /           | 根目录                                     |
+| cd             | Home Directory                                  |
+| cd [folder]    | 切换Directory                                   |
+| cd ~           | Home Directory，例如 'cd ~/folder/'             |
+| cd /           | 根Directory                                     |
 | ls             | 文件列表                                   |
 | ls -l          | 文件详细列表                               |
 | ls -a          | 列出隐藏文件                               |
@@ -111,28 +111,28 @@ Cmd --> Command
 |--------------------------|----------------------------------------|
 | Cmd-Shift-.              | 显示/恢复隐藏文件                      |
 | touch [file]             | 创建一个新文件                         |
-| pwd                      | 显示当前工作目录                       |
-| ..                       | 上级目录, 例如.                        |
-| 'ls -l ..'               | 上级目录的文件详细列表                 |
+| pwd                      | 显示当前工作Directory                       |
+| ..                       | 上级Directory, 例如.                        |
+| 'ls -l ..'               | 上级Directory的文件详细列表                 |
 | 'cd ../../'              | 向上移动两个层级                       |
-| .                        | 当前目录                               |
+| .                        | 当前Directory                               |
 | cat                      | 连接                                   |
 | rm [file]                | 移除文件, 例如 rm [file] [file]        |
 | rm -i [file]             | 移除时出现确认提示                     |
 | rm -r [dir]              | 移除文件及内容                         |
 | rm -f [file]             | 强制移除                               |
 | cp [file] [newfile]      | 复制文件                               |
-| cp [file] [dir]          | 复制文件到指定目录                     |
+| cp [file] [dir]          | 复制文件到指定Directory                     |
 | mv [file] [new filename] | 移动 / 重命名, 例如 mv -v [file] [dir] |
 
-## 目录管理
+## Directory管理
 
 | 按键/命令            | 描述                              |
 |----------------------|-----------------------------------|
-| mkdir [dir]          | 创建新目录                        |
-| mkdir -p [dir]/[dir] | 创建子目录                        |
-| rmdir [dir]          | 移除目录 ( 仅限目录下没有内容时 ) |
-| rm -R [dir]          | 移除目录及内容                    |
+| mkdir [dir]          | 创建新Directory                        |
+| mkdir -p [dir]/[dir] | 创建子Directory                        |
+| rmdir [dir]          | 移除Directory ( 仅限Directory下没有内容时 ) |
+| rm -R [dir]          | 移除Directory及内容                    |
 
 ## 管道 - 连接多个带有输出的命令
 

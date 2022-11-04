@@ -10,7 +10,7 @@ keywords: SQLite, FAQ
 
 原文链接：[SQLite Frequently Asked Questions][1]
 
-**目录**
+**Directory**
 
 <!-- vim-markdown-toc GFM -->
 * [如何创建自增字段](#如何创建自增字段)

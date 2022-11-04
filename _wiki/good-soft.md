@@ -44,7 +44,7 @@ keywords: 软件, 推荐
   alias blog=cd /d d:\github\mzlogin.github.io
   ```
 
-  然后就能愉快地使用 blog 命令在任意目录进入 blog 仓库的目录了。
+  然后就能愉快地使用 blog 命令在任意Directory进入 blog 仓库的Directory了。
 
 ### Genymotion
 

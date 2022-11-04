@@ -23,9 +23,9 @@ Preferences -> Editor -> General -> Console，勾选 Override console cycle buff
 
 ### 解决导入 Eclipse Maven 工程后无法读取 .xml 文件的问题
 
-IDEA 与 Eclipse 配置文件目录的方式不同，可以将文件夹标记为 Sources、Resources 和 tests 等，而 src/main/java 默认被标记为 Sources，src/main/resources 才默认被标记为 Resources，编译时自动复制。
+IDEA 与 Eclipse 配置文件Directory的方式不同，可以将文件夹标记为 Sources、Resources 和 tests 等，而 src/main/java 默认被标记为 Sources，src/main/resources 才默认被标记为 Resources，编译时自动复制。
 
-这样放在 src/main/java 目录下的文件与子文件夹均为 Sources，只将编译生成的 .class 文件复制到编译目录，在 Eclipse Maven 工程里放在 src/main/java 文件夹里的 xml、props 和 properties 文件就不会被拷贝到编译文件夹，导致执行时找不到这些文件，报类似下面这样的错误：
+这样放在 src/main/java Directory下的文件与子文件夹均为 Sources，只将编译生成的 .class 文件复制到编译Directory，在 Eclipse Maven 工程里放在 src/main/java 文件夹里的 xml、props 和 properties 文件就不会被拷贝到编译文件夹，导致执行时找不到这些文件，报类似下面这样的错误：
 
 ```
 org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from class path resource [spring-demo.xml]; nested exception is java.io.FileNotFoundException: class path resource [spring-demo.xml] cannot be opened because it does not exist
@@ -133,7 +133,7 @@ Error:(1, 1) error: illegalcharacter: '\ufeff'
 1. 右键工程 - Run Maven - install -U，右键工程 - Run Maven - Reimport
 2. File - Project Structure - Libraries - 全选删除，Reimport
 3. 重启 IDEA
-4. 关闭 IDEA，将 .idea 目录删除，重新打开项目
+4. 关闭 IDEA，将 .idea Directory删除，重新打开项目
 
 ### 自动生成 serialVersionUID
 
@@ -226,7 +226,7 @@ IDEA does not have write access to /Application/IntelliJ IDEA.app/Contents. Plea
 
 解决方法：
 
-将 IntelliJ IDEA.app 目录的权限修改为当前用户。
+将 IntelliJ IDEA.app Directory的权限修改为当前用户。
 
 ```
 sudo chown -R <current_user>:<user_group> "/Application/IntelliJ IDEA.app"

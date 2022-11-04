@@ -23,9 +23,9 @@ Cmder 的 PowerShell 配置文件 `<cmd_install_path>/config/user-profile.ps1`�
 
 ## alias
 
-### 快速进入某目录
+### 快速进入某Directory
 
-例：通过 `src` 命令快速进入 `d:\sources\` 目录。
+例：通过 `src` 命令快速进入 `d:\sources\` Directory。
 
 ```powershell
 function Enter-Sources {

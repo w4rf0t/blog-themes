@@ -23,7 +23,7 @@ keywords: Kindle
 
 1. 点击一个 PDF 文件打开 KOReader；
 2. 进入文件浏览器，找到 /mnt/us/mkk/developer.keystore，长按复制；
-3. 进到 /var/local/java/keystore 目录，长按粘贴；
+3. 进到 /var/local/java/keystore Directory，长按粘贴；
 4. 重启 Kindle。
 
 注：第 2 步进到 /mnt/us/mkk 路径下有可能发现看不到 developer.keystore 文件，此时在 KOReader 的菜单项里找到「设置」-「显示不支持的文件」，将其勾选即可。

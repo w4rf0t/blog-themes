@@ -15,7 +15,7 @@ Windows Terminal 是微软打造的一款新的控制台终端，目前还在 Pr
 
 ## 自定义配置文件位置
 
-我想将配置文件放到 HOME 目录下，然后通过 git 管理，通过以下办法可以做到：
+我想将配置文件放到 HOME Directory下，然后通过 git 管理，通过以下办法可以做到：
 
 首先剪切 ~/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/RoamingState/profiles.json 文件到 ~/Windows-terminal-profiles.json，然后管理员权限打开 PowerShell，执行
 
@@ -36,10 +36,10 @@ New-Item -ItemType SymbolicLink -Path ~/Documents/WindowsPowerShell/Microsoft.Po
 如果是使用 PowerShell 7 Preview，执行
 
 ```
-New-Item -ItemType SymbolicLink -Path <我的文档>/PowerShell/Microsoft.PowerShell_profile.ps1 -Target <个人目录>/powershell.ps1
+New-Item -ItemType SymbolicLink -Path <我的文档>/PowerShell/Microsoft.PowerShell_profile.ps1 -Target <个人Directory>/powershell.ps1
 ```
 
-上面两个目录需要使用绝对路径，不然会报错。
+上面两个Directory需要使用绝对路径，不然会报错。
 
 我的 PowerShell 配置见 <https://github.com/mzlogin/config-files/blob/master/powershell.ps1>
 

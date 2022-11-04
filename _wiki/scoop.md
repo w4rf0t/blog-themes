@@ -7,7 +7,7 @@ description: Windows 下好用的包管理工具。
 keywords: scoop, windows
 ---
 
-## 指定 Scoop 安装目录
+## 指定 Scoop 安装Directory
 
 环境变量：
 
@@ -15,11 +15,11 @@ keywords: scoop, windows
 SCOOP='D:\Applications\Scoop'
 ```
 
-## 指定安装程序自定义目录
+## 指定安装程序自定义Directory
 
-设置 `SCOOP` 环境变量后，程序会默认安装在 `%SCOOP%\apps` 目录下。
+设置 `SCOOP` 环境变量后，程序会默认安装在 `%SCOOP%\apps` Directory下。
 
-还可以自定义全局安装目录：
+还可以自定义全局安装Directory：
 
 ```
 SCOOP_GLOBAL='D:\Applications\ScoopApps'
@@ -35,13 +35,13 @@ scoop install aria2
 
 ## 软件下载
 
-安装到默认目录：
+安装到默认Directory：
 
 ```
 scoop install <appname>
 ```
 
-安装到全局安装目录：
+安装到全局安装Directory：
 
 ```
 scoop install -g <appname>

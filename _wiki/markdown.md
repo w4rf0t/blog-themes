@@ -12,7 +12,7 @@ mathjax: true
 mindmap: true
 ---
 
-**目录**
+**Directory**
 
 * TOC
 {:toc}
@@ -137,10 +137,10 @@ print 'Hello, World!'
 ### 锚点
 
 ```
-* [目录](#目录)
+* [Directory](#Directory)
 ```
 
-* [目录](#目录)
+* [Directory](#Directory)
 
 ### Inline Attribute
 

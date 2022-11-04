@@ -14,4 +14,4 @@ keywords: Java, Maven
 
 唯一异常的地方是在 IDEA 的 Project 视图里的 External Libraries 里，正常的依赖包是能够展开看里面的类的，但该类所属依赖包无法展开。
 
-最后打开 Maven 的本地存储（比如我的是 ~/.m2 目录），才发现该依赖包对应的 jar 包是 0 字节，将它删除后 Reimport，问题解决。
+最后打开 Maven 的本地存储（比如我的是 ~/.m2 Directory），才发现该依赖包对应的 jar 包是 0 字节，将它删除后 Reimport，问题解决。
