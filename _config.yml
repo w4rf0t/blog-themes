@@ -125,13 +125,11 @@ collections:
 # support provider: disqus, gitment, gitalk, utterances, beaudar, giscus
 comments_provider: giscus
 # !!!Important!!! Please modify infos below to yours
-# disqus 配置参考：https://disqus.com
 giscus:
-  repo: mzlogin/blog-comments
-  repo-id: MDEwOlJlcG9zaXRvcnk5MzEyNzkxNw==
+  repo: w4rf0t/w4rf0the
+  repo-id: R_kgDOIWt4LQ
   category: Announcements
   category-id: DIC_kwDOBY0E7c4CRtg9
-# 在使用其它评论组件时可点击显示 Disqus
 lazy_load_disqus: false
 
 # ---------------- #

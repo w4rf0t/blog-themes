@@ -568,56 +568,56 @@ git clone -b <branch name> --single-branch <repo address>
 
 ### Get current branch name
 
-````sh
+```sh
 git symbolic-ref --short -q HEAD
 ```
 
-### 解决 no man viewer handled the request
+### Solve no man viewer handled the request
 
-运行命令 `git stash --help` 报错：
+Running the command `git stash --help` reports an error:
 
 ```sh
-warning: failed to exec 'man': Invalid argument
+warning: failed to exec man: Invalid argument
 fatal: no man viewer handled the request
 ```
 
-原因是 Windows 下没有 man 命令。
+The reason is that there is no man command under Windows.
 
-可以修改 git 配置让命令的帮助文档通过浏览器打开。
+The git configuration can be modified so that the help documentation for the command is opened through the browser.
 
 ```
 git config --global help.format web
+
 ```
 
-### 比较两个分支的差异
+### Compare the diff of two branches
 
-显示出所有差异详情：
+Show all difference details:
 
-```sh
+````sh
 git diff <branch_name_1> <branch_name_2>
-```
+````
 
-显示有差异的文件列表：
+Display a list of files with differences:
 
-```sh
+````sh
 git diff <branch_name_1> <branch_name_2> --stat
-```
+````
 
-显示指定文件的差异详情：
+Display diff details for the specified file:
 
 ```sh
 git diff <branch_name_1> <branch_name_2> <filename>
 ```
 
-查看 A 分支有，B 分支没有的提交：
+Check out the commits that branch A has and branch B does not:
 
 ```sh
 git log <branch_name_A> ^<branch_name_B>
 ```
 
-### git 操作时报警告
-
-警告信息：
+### Alarm during git operation
+Warning message:
 
 ```
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -647,17 +647,17 @@ Please make sure you have the correct access rights
 and the repository exists.
 ```
 
-解决方案：
+Solution:
 
 ```
 rm ~/.ssh/known_hosts
 ```
 
-然后重新操作即可。
+Then do it again.
 
-### 删除不存在对应远程分支的本地分支
+### Delete the local branch that does not have a corresponding remote branch
 
-（本小节有效性存疑，有时候并不好使。）
+(The validity of this section is questionable, and sometimes it does not work.)
 
 ```sh
 $ git remote show origin
@@ -668,10 +668,10 @@ refs/remotes/origin/feature/test    stale (use 'git remote prune' to remove)
 ...
 ```
 
-其中 feature/test 就是不存在远程分支的本地分支。
+Where feature/test is a local branch that does not exist a remote branch.
 
-```sh
+````sh
 $ git remote prune origin
-```
+````
 
-清除完成。
+Clearing is complete.
