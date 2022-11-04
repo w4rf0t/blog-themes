@@ -13,7 +13,9 @@ keywords: Android
 
 ### 循环引用的问题
 
-如果往一个 List 里多次添加了同一对象，在 `JSON.toJSONString` 时默认会被转换成这样：
+### Circular reference problem
+
+If the same object is added to a List multiple times, it will be converted to this by default in `JSON.toJSONString`:
 
 ```json
 [
@@ -36,11 +38,11 @@ keywords: Android
 ]
 ```
 
-我这里因为是误操作才往 List 里多次添加的，所以解决误操作就好了。
 
-至于确实是真实意图的情况（可能一般前端才有？），可以参考 <http://blog.csdn.net/Singleton1900/article/details/50435247> 解决。
+I have added it to the List many times because of the misoperation, so it is good to solve the misoperation.
 
-### boolean 的序列化字段命名
+As for the case where it is really the real intention (maybe only the front end?), you can refer to <http://blog.csdn.net/Singleton1900/article/details/50435247> to solve it.
+### boolean serialization field naming
 
 ```java
 public class Test {
@@ -56,16 +58,16 @@ public class Test {
 }
 ```
 
-这个类的对象在使用 `JSON.toJSONString` 方法时，`isTest` 字段名被改为了 `test`。
+When objects of this class use the `JSON.toJSONString` method, the `isTest` field name is changed to `test`.
 
-有几种方法可以解决：
+There are several ways to solve it:
 
-1. 将字段名改为 test（符合 Java Bean）
+1. Change the field name to test (compliant with Java Bean)
 
-2. 为字段名加上注解，标示它序列化的名字为 `isTest`
+2. Annotate the field name, indicating that its serialized name is `isTest`
 
-3. 使用 Gson
+3. Using Gson
 
-FastJson 项目里相关的讨论 Issue 如下：
+The related discussion issues in the FastJson project are as follows:
 
 <https://github.com/alibaba/fastjson/issues/278>

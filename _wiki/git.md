@@ -4,41 +4,42 @@ title: Git
 cate1: Tools
 cate2: Version Control
 categories: Git
-description: Git 常用操作记录。
-keywords: Git, 版本控制
+description: Git common operation records.。
+keywords: Git, version control
 ---
 
-## 常用命令
+## Common commands
 
-| 功能                      | 命令                                  |
+| Function                      | Order                                  |
 |:--------------------------|:--------------------------------------|
-| 添加文件/更改到暂存区     | git add filename                      |
-| 添加所有文件/更改到暂存区 | git add .                             |
-| 提交                      | git commit -m msg                     |
-| 从远程仓库拉取最新代码    | git pull origin master                |
-| 推送到远程仓库            | git push origin master                |
-| 查看配置信息              | git config --list                     |
-| 查看文件列表              | git ls-files                          |
-| 比较工作区和暂存区        | git diff                              |
-| 比较暂存区和版本库        | git diff --cached                     |
-| 比较工作区和版本库        | git diff HEAD                         |
-| 从暂存区移除文件          | git reset HEAD filename               |
-| 查看本地远程仓库配置      | git remote -v                         |
-| 回滚                      | git reset --hard 提交SHA              |
-| 强制推送到远程仓库        | git push -f origin master             |
-| 修改上次 commit           | git commit --amend                    |
-| 推送 tags 到远程仓库      | git push --tags                       |
-| 推送单个 tag 到远程仓库   | git push origin [tagname]             |
-| 删除远程分支              | git push origin --delete [branchName] |
-| 远程空分支（等同于删除）  | git push origin :[branchName]         |
-| 查看所有分支历史          | gitk --all                            |
-| 按日期排序显示历史        | gitk --date-order                     |
+| Add files/changes to staging area     | git add filename                      |
+| Add all files/changes to staging area | git add .                             |
+| Submit                      | git commit -m msg                     |
+| Pull the latest code from the remote repository    | git pull origin master                |
+| Push to remote repository            | git push origin master                |
+| View configuration information              | git config --list                     |
+| View file list              | git ls-files                          |
+| Comparing workspace and staging area        | git diff                              |
+| Comparing staging area and repository        | git diff --cached                     |
+| Comparing workspaces and repositories        | git diff HEAD                         |
+| Remove files from staging area          | git reset HEAD filename               |
+| View local remote warehouse configuration      | git remote -v                         |
+| Rollback                      | git reset --hard submit SHA              |
+| Force push to remote repository        | git push -f origin master             |
+| Modified last commit           | git commit --amend                    |
+| Push tags to the remote repository      | git push --tags                       |
+| Push a single tag to the remote repository   | git push origin [tagname]             |
+| Delete remote branch              | git push origin --delete [branchName] |
+| Remote empty branch (equivalent to delete)  | git push origin :[branchName]         |
+| View all branch history          | gitk --all                            |
+| Display history sorted by date        | gitk --date-order                     |
 
 ## Q&A
 
-### 如何解决gitk中文乱码，git ls-files 中文文件名乱码问题？
 
-在~/.gitconfig中添加如下内容
+### How to solve the problem of Chinese garbled characters in gitk and Chinese file names in git ls-files?
+
+Add the following to ~/.gitconfig
 
 ```
 [core]
@@ -51,9 +52,9 @@ keywords: Git, 版本控制
    pathnameencoding = utf-8
 ```
 
-参考 <http://zengrong.net/post/1249.htm>
+Reference <http://zengrong.net/post/1249.htm>
 
-### 如何处理本地有更改需要从服务器合入新代码的情况？
+### How to handle the situation where there are local changes that need to be merged in new code from the server?
 
 ```
 git stash
@@ -63,31 +64,31 @@ git stash pop
 
 ### stash
 
-查看 stash 列表：
+Check out the stash list:
 
 ```
 git stash list
 ```
 
-查看某一次 stash 的改动文件列表（不传最后一个参数默认显示最近一次）：
+View the list of changed files of a certain stash (the latest one is displayed by default if the last parameter is not passed):
 
 ```
 git stash show "stash@{0}"
 ```
 
-以 patch 方式显示改动内容
+Show changes as patches
 
 ```
 git stash show -p "stash@{0}"
 ```
 
-应用某次 stash 改动内容：
+Apply a stash change:
 
 ```
 git stash apply "stash@{0}"
 ```
 
-### 如何合并 fork 的仓库的上游更新？
+### How to merge upstream updates of a forked repository?
 
 ```
 git remote add upstream https://upstream-repo-url
@@ -95,24 +96,24 @@ git fetch upstream
 git merge upstream/master
 ```
 
-### 如何通过 TortoiseSVN 带的 TortoiseMerge.exe 处理 git 产生的 conflict？
-* 将 TortoiseMerge.exe 所在路径添加到 `path` 环境变量。
-* 运行命令 `git config --global merge.tool tortoisemerge` 将 TortoiseMerge.exe 设置为默认的 merge tool。
-* 在产生 conflict 的目录运行 `git mergetool`，TortoiseMerge.exe 会跳出来供你 resolve conflict。
+### How to handle the conflict generated by git through TortoiseMerge.exe with TortoiseSVN?
+* Add the path where TortoiseMerge.exe is located to the `path` environment variable.
+* Run the command `git config --global merge.tool tortoisemerge` to set TortoiseMerge.exe as the default merge tool.
+* Run `git mergetool` in the directory where the conflict is generated, TortoiseMerge.exe will pop up for you to resolve the conflict.
 
-  > 也可以运行 `git mergetool -t vimdiff` 使用 `-t` 参数临时指定一个想要使用的 merge tool。
+  > You can also run `git mergetool -t vimdiff` to temporarily specify a merge tool to use with the `-t` parameter.
 
-### 不想跟踪的文件已经被提交了，如何不再跟踪而保留本地文件？
+### The files that you don't want to track have been submitted, how to keep the local files without tracking them?
 
-`git rm --cached /path/to/file`，然后正常 add 和 commit 即可。
+`git rm --cached /path/to/file`, then add and commit normally.
 
-### 如何不建立一个没有 parent 的 branch？
+### How not to create a branch without a parent?
 
 ```
 git checkout --orphan newbranch
 ```
 
-此时 `git branch` 是不会显示该 branch 的，直到你做完更改首次 commit。比如你可能会想建立一个空的 gh-pages branch，那么：
+At this point, `git branch` will not show the branch until you make the first commit of the changes. For example, you may want to create an empty gh-pages branch, then:
 
 ```
 git checkout --orphan gh-pages
@@ -122,61 +123,59 @@ git add .
 git commit -m "init commit"
 ```
 
-### submodule 的常用命令
+### Common commands for submodules
 
-**添加 submodule**
+**Add submodule**
 
-```
+````
 git submodule add git@github.com:philsquared/Catch.git Catch
-```
+````
 
-这会在仓库根目录下生成如下 .gitmodules 文件并 clone 该 submodule 到本地。
-
+This will generate the following .gitmodules file in the repository root directory and clone the submodule locally.
 ```
 [submodule "Catch"]
 path = Catch
 url = git@github.com:philsquared/Catch.git
 ```
 
-**更新 submodule**
+**Update submodule**
 
-```
+````
 git submodule update
-```
+````
 
-当 submodule 的 remote 有更新的时候，需要
+When the remote of the submodule is updated, it is required
 
-```
+````
 git submodule update --remote
-```
+````
 
-当在本地拉取了 submodule 的远程更新，但是想反悔时：
-
+When you pull the remote update of submodule locally, but want to go back:
 ```
 git submodule update --init
 ```
 
-**删除 submodule**
+**Remove submodule**
 
-在 .gitmodules 中删除对应 submodule 的信息，然后使用如下命令删除子模块所有文件：
+Delete the information of the corresponding submodule in .gitmodules, and then use the following command to delete all files of the submodule:
 
-```
+````
 git rm --cached Catch
-```
+````
 
-**clone 仓库时拉取 submodule**
+**Pull submodule when cloning repository**
 
-```
+````
 git submodule update --init --recursive
-```
+````
 
-### 删除远程 tag
+### delete remote tag
 
 ```
 git push origin --delete tag [tagname]
 ```
 
-### 基于某次 commit 创建 tag
+### Create a tag based on a commit
 
 ```
 git tag <tag name> <commit id>
@@ -186,38 +185,37 @@ git tag <tag name> <commit id>
 git tag v1.0.0 ef0120
 ```
 
-### 清除未跟踪文件
+
+### Clear untracked files
 
 ```
 git clean
 ```
 
-可选项：
+Optional:
 
-| 选项                    | 含义                             |
+| Options                    | Meaning                             |
 |-------------------------|----------------------------------|
-| -q, --quiet             | 不显示删除文件名称               |
-| -n, --dry-run           | 试运行                           |
-| -f, --force             | 强制删除                         |
-| -i, --interactive       | 交互式删除                       |
-| -d                      | 删除文件夹                       |
-| -e, --exclude <pattern> | 忽略符合 <pattern> 的文件        |
-| -x                      | 清除包括 .gitignore 里忽略的文件 |
-| -X                      | 只清除 .gitignore 里忽略的文件   |
+| -q, --quiet             | Do not display deleted file names              |
+| -n, --dry-run           | Test run                           |
+| -f, --force             | Force                         |
+| -i, --interactive       | Interactive                       |
+| -d                      | Delete folder                       |
+| -e, --exclude <pattern> | Ignore matches <pattern> document        |
 
-### 忽略文件属性更改
+### Ignore file attribute changes
 
-因为临时需求对某个文件 chmod 了一下，结果这个就被记为了更改，有时候这是想要的，有时候这会造成困扰。
+A file was chmoded because of a temporary requirement, and as a result it was recorded as a change, which is sometimes desirable and sometimes annoying.
 
-```
+````
 git config --global core.filemode false
-```
+````
 
-参考：[How do I make Git ignore file mode (chmod) changes?](http://stackoverflow.com/questions/1580596/how-do-i-make-git-ignore-file-mode-chmod-changes)
+Reference: [How do I make Git ignore file mode (chmod) changes?](http://stackoverflow.com/questions/1580596/how-do-i-make-git-ignore-file-mode-chmod-changes)
 
-### 忽略除某后缀名以外的所有文件
+### Ignore all files except a certain extension
 
-忽略除了 .c 后缀名以外的所有文件。
+All files except .c suffix are ignored.
 
 ```
 *
@@ -225,95 +223,95 @@ git config --global core.filemode false
 !*/
 ```
 
-gitignore 里，*、?、[] 可用作通配符。
+In gitignore, *, ?, [] can be used as wildcards.
 
-### patch
+###patch
 
-将未添加到暂存区的更改生成 patch 文件：
+Generate a patch file for changes not added to the staging area:
 
-```
+````
 git diff > demo.patch
-```
+````
 
-将已添加到暂存区的更改生成 patch 文件：
+Generate a patch file with changes that have been added to the staging area:
 
-```
+````
 git diff --cached > demo.patch
-```
+````
 
-合并上面两条命令生成的 patch 文件包含的更改：
+Merge the changes contained in the patch file generated by the two commands above:
 
-```
+````
 git apply demo.patch
-```
+````
 
-将从 HEAD 之前的 3 次 commit 生成 3 个 patch 文件：
+3 patch files will be generated from 3 commits before HEAD:
 
-（HEAD 可以换成 sha1 码）
+(HEAD can be replaced with sha1 code)
 
 ```
 git format-patch -3 HEAD
 ```
 
-生成 af8e2 与 eaf8e 之间的 commits 的 patch 文件：
+Generate a patch file for commits between af8e2 and eaf8e:
 
-（注意 af8e2 比 eaf8e 早）
+(note that af8e2 is earlier than eaf8e)
 
-```
+````
 git format-patch af8e2..eaf8e
-```
+````
 
-合并 format-patch 命令生成的 patch 文件：
+Merge the patch files generated by the format-patch command:
 
-```
+````
 git am 0001-Update.patch
-```
+````
 
-与 `git apply` 不同，这会直接 add 和 commit。
+Unlike `git apply`, this will add and commit directly.
 
-### 只下载最新代码
+### only download latest code
 
 ```
 git clone --depth 1 git://xxxxxx
 ```
 
-这样 clone 出来的仓库会是一个 shallow 的状态，要让它变成一个完整的版本：
+The cloned repository will be in a shallow state, to make it a full version:
 
-```
+````
 git fetch --unshallow
-```
+````
 
-或
+or
 
-```
+````
 git pull --unshallow
-```
+````
 
-### 基于某次 commit 创建分支
+### Create a branch based on a commit
 
-```sh
+````sh
 git checkout -b test 5234ab
-```
+````
 
-表示以 commit hash 为 `5234ab` 的代码为基础创建分支 `test`。
+Indicates to create a branch `test` based on the code with the commit hash of `5234ab`.
 
-### 恢复单个文件到指定版本
+### Restore a single file to the specified version
 
-```sh
+````sh
 git reset 5234ab MainActivity.java
-```
+````
 
-恢复 MainActivity.java 文件到 commit hash 为 `5234ab` 时的状态。
+Restore the MainActivity.java file to the state when the commit hash was `5234ab`.
 
-### 设置全局 hooks
+### Set global hooks
 
 ```sh
 git config --global core.hooksPath C:/Users/mazhuang/git-hooks
 ```
 
-然后把对应的 hooks 文件放在最后一个参数指定的目录即可。
+Then put the corresponding hooks file in the directory specified by the last parameter.
 
-比如想要设置在 commit 之前如果检测到没有从服务器同步则不允许 commit，那在以上目录下建立文件 pre-commit，内容如下：
+For example, if you want to set before commit, if it is detected that there is no synchronization from the server, commit is not allowed, then create a file pre-commit in the above directory, the content is as follows:
 
 ```sh
 #!/bin/sh
@@ -336,242 +334,241 @@ echo "Error: you need to update from remote first"
 exit 1
 ```
 
-### 查看某次 commit 的修改内容
+### View the modification content of a commit
 
-```sh
+````sh
 git show <commit-hash-id>
-```
+````
 
-### 查看某个文件的修改历史
+### View the modification history of a file
 
-```sh
+````sh
 git log -p <filename>
-```
+````
 
-### 查看最近两次的修改内容
+### View the last two revisions
 
-```sh
+````sh
 git log -p -2
-```
+````
 
-### 应用已存在的某次更改 / merge 某一个 commit
+### Apply an existing change / merge a commit
 
-```sh
+````sh
 git cherry-pick <commit-hash-id>
-```
+````
 
-cherry-pick 有更多详细的用法，可以参见帮助文档。
+More detailed usage of cherry-pick can be found in the help documentation.
 
-### 命令行自动补全
+### Command line autocompletion
 
-在 shell 里加载 git-completion 系列脚本，详见 <https://github.com/git/git/tree/master/contrib/completion>
+Load the git-completion series of scripts in the shell, see <https://github.com/git/git/tree/master/contrib/completion>
 
-### 文件每一行变更明细
+### Change details for each line of the file
 
-```sh
+````sh
 git blame <filename>
-```
+````
 
-### 找回曾经的历史
+### Retrieve the past history
 
 ```sh
 git reflog
 ```
 
-列出 HEAD 曾指向过的一系列 commit，它们只存在于本机，不是版本仓库的一部分。
+Lists a list of commits that HEAD has pointed to, which only exist locally and are not part of the version repository.
 
-还有：
+and also:
 
-```sh
+````sh
 git fsck
-```
+````
 
-### 记住 http(s) 方式的用户名密码
+### Remember username and password in http(s) mode
 
-在有些情况下无法使用 git 协议，比如公司的 git 服务器设置了 IP 白名单，只能在公司内网使用 ssh，那么在外面就只能使用 http(s) 上传下载源码了，但每次都手动输入用户名/密码特别惨，于是乎就记住吧。
+In some cases, the git protocol cannot be used. For example, the company's git server has set up an IP whitelist and can only use ssh on the company's intranet. Then, you can only use http(s) to upload and download source code outside, but manually every time. Entering the username/password is a pain in the ass, so just remember it.
 
-设置记住密码（默认 15 分钟）：
+Set remember password (default 15 minutes):
 
-```sh
+````sh
 git config --global credential.helper cache
-```
+````
 
-自定义记住的时间（如下面是一小时）：
+Customize the time to remember (eg one hour below):
 
-```sh
+````sh
 git config credential.helper 'cache --timeout=3600'
-```
+````
 
-长期存储密码：
+Long-term storage of passwords:
 
-```sh
+````sh
 git config --global credential.helper store
-```
+````
 
-### git commit 使用 vim 编辑 commit message 中文乱码
+### git commit Use vim to edit commit message Chinese garbled
 
-这个问题在 Windows 下出现了，没找到能完美解决的办法，一种方法是在 vim 打开后输入：
+This problem appeared under Windows, and I didn't find a perfect solution. One way is to enter after vim is opened:
 
-```sh
+````sh
 :set termencoding=GBK
-```
+````
 
-这就有点太麻烦了，折衷的方法是改为使用 gVim 或其它你喜欢的编辑器来编辑 commit message：
+This is a bit too cumbersome, and the compromise is to use gVim or other editor of your choice to edit the commit message instead:
 
-```sh
+````sh
 git config --global core.editor gvim
-```
+````
 
-参考：
-* [How do I make Git use the editor of my choice for commits?](https://stackoverflow.com/questions/2596805/how-do-i-make-git-use-the-editor-of-my-choice-for-commits)
-* [转：git windows中文 乱码问题解决汇总](http://www.cnblogs.com/youxin/p/3227961.html)
+refer to:
+* [How do I make Git use the editor of my choice for commits?](https://stackoverflow.com/questions/2596805/how-do-i-make-git-use-the-editor-of-my- choice-for-commits)
+* [Transfer: git windows Chinese garbled problem solving summary](http://www.cnblogs.com/youxin/p/3227961.html)
 
-另外在升级 Vim 到 8.1 之后，由于 PATH 环境变量里加的还是 vim80 文件夹，导致 git commit 时提示：
+In addition, after upgrading Vim to 8.1, since the vim80 folder is still added to the PATH environment variable, it prompts when git commit:
 
-```
+````
 error: cannot spawn gvim: No such file or directory
 error: unable to start editor 'gvim'
 Please supply the message using either -m or -F option.
-```
+````
 
-使用 `which gvim` 查看：
+Use `which gvim` to see:
 
-```
+````
 $ which gvim
 /usr/bin/which: no gvim in xxxxxxx
-```
+````
 
-将 PATH 里添加的 vim80 路径改为 vim81 后解决。
+Change the vim80 path added in the PATH to vim81 and solve it.
 
-### git log 中文乱码
+### git log Chinese garbled characters
 
-只在 Windows 下遇到。
+Only encountered under Windows.
 
-```sh
+````sh
 git config --global i18n.logoutputencoding gbk
-```
+````
 
-编辑 git 安装目录下 etc/profile 文件，在最后添加如下内容：
+Edit the etc/profile file in the git installation directory and add the following at the end:
 
-```
+````
 export LESSCHARSET=utf-8
-```
+````
 
-参考：[Git for windows 中文乱码解决方案](https://segmentfault.com/a/1190000000578037)
+Reference: [Git for windows Chinese garbled solution](https://segmentfault.com/a/1190000000578037)
 
-### git diff 中文乱码
+### git diff Chinese garbled characters
 
-只在 Windows 下遇到，目前尚未找到有效办法。
+It is only encountered under Windows, and no effective solution has been found yet.
 
-### 统计代码行数
+### Count lines of code
 
-CMD 下直接执行可能失败，可以在右键，Git Bash here 里执行。
+Direct execution under CMD may fail, you can right-click and execute it in Git Bash here.
 
-#### 统计某人的代码提交量
-
+#### Count someone's code commits
 ```sh
 git log --author="$(git config --get user.name)" --pretty=tformat: --numstat | gawk '{ add += $1 ; subs += $2 ; loc += $1 - $2 } END { printf "added lines: %s removed lines : %s total lines: %s\n",add,subs,loc }'
 ```
 
-#### 仓库提交者排名前 5
+#### Top 5 repository committers
 
-如果看全部，去掉 head 管道即可。
+To see all, just remove the head pipe.
 
-```sh
+````sh
 git log --pretty='%aN' | sort | uniq -c | sort -k1 -n -r | head -n 5
-```
+````
 
-#### 仓库提交者（邮箱）排名前 5
+#### Top 5 repository committers (emails)
 
-这个统计可能不太准，可能有同名。
+This statistic may not be accurate and may have the same name.
 
-```sh
-git log --pretty=format:%ae | gawk -- '{ ++c[$0]; } END { for(cc in c) printf "%5d %s\n",c[cc],cc; }' | sort -u -n -r | head -n 5
-```
+````sh
+git log --pretty=format:%ae | gawk -- '{ ++c[$0]; } END { for(cc in c) printf "%5d %s\n",c[cc],cc; } ' | sort -u -n -r | head -n 5
+````
 
-#### 贡献者排名
+#### Contributor Ranking
 
-```sh
+````sh
 git log --pretty='%aN' | sort -u | wc -l
-```
+````
 
-#### 提交数统计
+#### Commits statistics
 
-```sh
+````sh
 git log --oneline | wc -l
-```
+````
 
-参考：[Git代码行统计命令集](http://blog.csdn.net/Dwarven/article/details/46550117)
+Reference: [Git Code Line Statistics Command Set](http://blog.csdn.net/Dwarven/article/details/46550117)
 
-### 修改文件名时的大小写问题
+### Case problem when modifying file name
 
-修改文件名大小写时，默认会被忽略（在 Windows 下是这样），让 git 对大小写敏感的方法：
+When modifying the case of the file name, it will be ignored by default (under Windows). The method to make git case-sensitive:
 
-```sh
+````sh
 git config --global core.ignorecase false
-```
+````
 
-或者使用 `git mv oldname newname` 也是可以的。
+Or using `git mv oldname newname` is also possible.
 
-### 修复 gitk 在 macOS 下显示模糊的问题
+### Fix gitk display blur issue on macOS
 
-gitk 很方便，但是在 Mac 系统下默认显示很模糊，影响体验。
+gitk is very convenient, but the default display under Mac system is very blurred, which affects the experience.
 
-根据网上搜索的结果，解决方法有两种，我采用第一种解决，第二种未尝试。
+According to the results of online search, there are two solutions, I use the first solution, the second did not try.
 
-方法一：
+method one:
 
-1. 重新启动机器，按 command + R 等 Logo 和进度条出现，会进入 Recovery 模式，选择顶部的实用工具——终端，运行以下命令：
+1. Restart the machine, press command + R, etc. Logo and progress bar appear, it will enter Recovery mode, select the utility tool at the top - terminal, and run the following command:
 
-    ```sh
+    ````sh
     csrutil disable
-    ```
+    ````
 
-2. 重新启动机器。
+2. Restart the machine.
 
-3. 编辑 Wish 程序的 plist，启动高分辨率屏支持。
+3. Edit the Wish program's plist to enable high-resolution screen support.
 
-    ```
+    ````
     sudo gvim /System/Library/Frameworks/Tk.framework/Versions/Current/Resources/Wish.app/Contents/Info.plist
-    ```
+    ````
 
-    在最后的 </dict> 前面加上以下代码
+    Add the following code before the final </dict>
 
-    ```sh
+    ````sh
     <key>NSHighResolutionCapable</key>
     <true/>
-    ```
+    ````
 
-4. 更新 Wish.app。
+4. Update Wish.app.
 
-    ```sh
+    ````sh
     sudo touch Wish.app
-    ```
+    ````
 
-5. 再次用 1 步骤的方法进入 Recovery 模式，执行 `csrutil enable` 启动对系统文件保护，再重启即可。
+5. Use step 1 to enter Recovery mode again, execute `csrutil enable` to enable protection of system files, and then restart.
 
-参考：[Mac 中解决 gitk 模糊问题](http://roshanca.com/2017/make-gitk-retina-in-mac/)
+Reference: [Resolving gitk ambiguity in Mac](http://roshanca.com/2017/make-gitk-retina-in-mac/)
 
-方法二：
+Method Two:
 
-```sh
+````sh
 brew cask install retinizer
 open /System/Library/Frameworks/Tk.framework/Versions/Current/Resources/
-```
+````
 
-打开 retinizer，将 Wish.app 拖到 retinizer 的界面。
+Open the retinizer and drag Wish.app to the retinizer's interface.
 
-参考：[起底Git-Git基础](http://yanhaijing.com/git/2017/02/09/deep-git-4/)
+Reference: [Deep Git-Git Foundation](http://yanhaijing.com/git/2017/02/09/deep-git-4/)
 
-### clone 时指定 master 以外的分支
+### Specify a branch other than master when clone
 
-```sh
+````sh
 git clone -b <branch name> --single-branch <repo address>
-```
+````
 
-### 获取当前分支名称
+### Get current branch name
 
-```sh
+````sh
 git symbolic-ref --short -q HEAD
 ```
 
