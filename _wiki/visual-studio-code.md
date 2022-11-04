@@ -3,11 +3,11 @@ layout: wiki
 title: Visual Studio Code
 cate1: Tools
 cate2: Editor
-description: Visual Studio Code 的快捷键与使用技巧
+description: Shortcuts and tips for Visual Studio Code
 keywords: Visual Studio Code
 ---
 
-## 快捷键
+## hot key
 
 C --> Ctrl
 
@@ -17,56 +17,56 @@ M --> Alt
 
 Cmd --> Command
 
-| 功能              | Windows | Mac OS X |
-|:------------------|:--------|:---------|
-| 打开文件          | C-o     |          |
-| 打开文件夹        | C-k C-o |          |
-| 关闭文件夹        | C-k f   |          |
-| 命令面板          | C-S-p   |          |
-| 资源管理器        | C-S-e   |          |
-| 搜索              | C-S-f   |          |
-| Git               | C-S-g   |          |
-| 调试              | C-S-d   |          |
-| 插件              | C-S-x   |          |
-| Markdown 侧边预览 | C-k v   |          |
-| Markdown 预览     | C-S-v   |          |
+| Features | Windows | Mac OS X |
+|:-------------------|:------------|:---------|
+| Open file | C-o | |
+| Open Folder | C-k C-o | |
+| close folder | C-k f | |
+| Command Palette | C-S-p | |
+| Explorer | C-S-e | |
+| Search | C-S-f | |
+| Git | C-S-g | |
+| Debug | C-S-d | |
+| Plugins | C-S-x | |
+| Markdown side preview | C-k v | |
+| Markdown Preview | C-S-v | |
 
-## 使用 VSCode 作为 mergetool
+## Using VSCode as mergetool
 
-编辑 ~/.gitconfig 文件，添加如下内容：
+Edit the ~/.gitconfig file and add the following:
 
-```
+````
 [merge]
     tool = vscode
 [mergetool "vscode"]
     cmd = code --wait $MERGED
-```
+````
 
-需要的时候执行 git mergetool 就会调起了。
+Execute git mergetool when needed and it will be called up.
 
-参考：<https://blog.kulman.sk/using-vscode-as-git-merge-tool/>
+Reference: <https://blog.kulman.sk/using-vscode-as-git-merge-tool/>
 
-## 使用 VSCode 作为 git commit message 编辑器
+## Use VSCode as git commit message editor
 
-```
+````
 git config --global core.editor "code -w"
-```
+````
 
-## VSCodeVim 支持按键重复
+## VSCodeVim supports key repeat
 
-在 macOS，默认情况 VSCodeVim 模式下是不支持按键重复的，比如你在 Normal 模式下长按 `L`，结果光标只向右移动了一次，而没有像你预期的那样一直移动。
+On macOS, the VSCodeVim mode does not support key repetition by default. For example, if you press and hold `L` in Normal mode, the cursor only moves to the right once, instead of moving all the time as you expected.
 
-启用按键重复的方法在插件的 REAME 有说明，链接：<https://github.com/VSCodeVim/Vim#mac>
+The method of enabling key repeat is described in the REAME of the plugin, link: <https://github.com/VSCodeVim/Vim#mac>
 
-方法：
+method:
 
-按需执行下面的某一行命令并重启 VSCode。
+Execute one of the following lines as needed and restart VSCode.
 
-```sh
-$ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false         # For VS Code
+````sh
+$ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false # For VS Code
 $ defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false # For VS Code Insider
-$ defaults write com.visualstudio.code.oss ApplePressAndHoldEnabled -bool false    # For VS Codium
-$ defaults delete -g ApplePressAndHoldEnabled                                      # If necessary, reset global default
-```
+$ defaults write com.visualstudio.code.oss ApplePressAndHoldEnabled -bool false # For VS Codium
+$ defaults delete -g ApplePressAndHoldEnabled # If necessary, reset global default
+````
 
-如果有需要，调整「系统偏好设置」—「键盘」里的「按键重复」和「重复前延迟」。
+If necessary, adjust "Key Repeat" and "Delay before Repeat" in System Preferences - Keyboard.

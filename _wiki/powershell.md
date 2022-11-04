@@ -2,52 +2,52 @@
 layout: wiki
 title: PowerShell
 cate1: Tools
-cate2: 
-description: 使用 PowerShell 打造 Windows 下的顺手终端。
+cate2:
+description: Use PowerShell to create a handy terminal under Windows.
 keywords: Windows, PowerShell
 ---
 
-使用 PowerShell 打造 Windows 下的顺手终端。
+Use PowerShell to create a handy terminal under Windows.
 
-## 与 Cmder 配合使用
+## Working with Cmder
 
-搭配 Cmder 一起服用，才最好。
+It is best to take it with Cmder.
 
-## 配置文件位置
+## Configuration file location
 
-PowerShell 6 默认配置文件 `~/Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1`。
+PowerShell 6 default profile `~/Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1`.
 
-PowerShell 7 默认配置文件 `<我的文档>/PowerShell/Microsoft.PowerShell_profile.ps1`
+PowerShell 7 default profile `<My Documents>/PowerShell/Microsoft.PowerShell_profile.ps1`
 
-Cmder 的 PowerShell 配置文件 `<cmd_install_path>/config/user-profile.ps1`。
+Cmder's PowerShell profile `<cmd_install_path>/config/user-profile.ps1`.
 
 ## alias
 
-### 快速进入某Directory
+### Quick access to a Directory
 
-例：通过 `src` 命令快速进入 `d:\sources\` Directory。
+Example: Quick access to `d:\sources\` Directory via `src` command.
 
 ```powershell
 function Enter-Sources {
     cd d:\sources\
 }
 
-Set-Alias src Enter-Sources
-```
+Set-Alias ​​src Enter-Sources
+````
 
-### 快速打开当前文件夹
+### Quickly open current folder
 
-例：通过 `e.` 命令快速在资源管理器打开当前文件夹。
+Example: Use the `e.` command to quickly open the current folder in the explorer.
 
 ```powershell
 function Open-Current-Directory {
-    explorer .
+    explorer.
 }
 
-Set-Alias e. Open-Current-Directory
-```
+Set-Alias ​​e. Open-Current-Directory
+````
 
-### git 相关命令
+### git related commands
 
 ```powershell
 ## gs=git status
@@ -55,21 +55,21 @@ function Git-Status {
     git status
 }
 
-Set-Alias gs Git-Status
+Set-Alias ​​gs Git-Status
 
 ## ga=git add .
 function Git-Add-All {
     git add .
 }
 
-Set-Alias ga Git-Add-All
+Set-Alias ​​ga Git-Add-All
 
-## gg=gitk
+##gg=gitk
 function Git-Gui {
     gitk
 }
 
-Set-Alias gg Git-Gui
+Set-Alias ​​gg Git-Gui
 
 ## gpull=git pull origin <current branch>
 function Git-Pull-Current-Branch {
@@ -77,7 +77,7 @@ function Git-Pull-Current-Branch {
     git pull origin $currentBranch
 }
 
-Set-Alias gpull Git-Pull-Current-Branch
+Set-Alias ​​gpull Git-Pull-Current-Branch
 
 ## gpush=git push origin <current branch>
 function Git-Push-Current-Branch {
@@ -85,17 +85,17 @@ function Git-Push-Current-Branch {
     git push origin $currentBranch
 }
 
-Set-Alias gpush Git-Push-Current-Branch
+Set-Alias ​​gpush Git-Push-Current-Branch
 
-## g1=add、commit、push 一条龙
+## g1=add, commit, push one-stop
 function Git-Commit-And-Push {
     git add .
     git commit -m $args[0]
     Git-Push-Current-Branch
 }
 
-Set-Alias g1 Git-Commit-And-Push
-```
+Set-Alias ​​g1 Git-Commit-And-Push
+````
 
 ### objdump
 
@@ -104,39 +104,39 @@ function Obj-Dump {
     D:\Android\sdk\ndk-bundle\toolchains\x86_64-4.9\prebuilt\windows-x86_64\bin\x86_64-linux-android-objdump.exe $args
 }
 
-Set-Alias objdump Obj-Dump
-```
+Set-Alias ​​objdump Obj-Dump
+````
 
-## 快捷键映射
+## Shortcut keymap
 
-从 Linux/macOS 的 bash 甚至 Windows 的 cmd 下切换过来后，发现 ctrl-u、ctrl-k 等快捷键不可用了，各种不顺手，PSReadLine 拯救你。
+After switching from Linux/macOS bash or even Windows cmd, I found that shortcut keys such as ctrl-u and ctrl-k are not available. PSReadLine saves you.
 
 ```powershell
 # ctrl-k, ctrl-u, ctrl-a, ctrl-e, ctrl-b, ctrl-f, etc
 Import-Module PSReadLine
 Set-PSReadLineOption -EditMode Emacs
-```
+````
 
-## 常用命令
+## Common commands
 
-### 查看 PATH 环境变量
+### View PATH environment variable
 
-```
+````
 type env:path
-```
+````
 
-或者将它们每个一行显示：
+Or display them on one line each:
 
-```
+````
 (type env:path) -split ';'
-```
+````
 
-还可以过滤：
+You can also filter:
 
-```
+````
 (type env:path) -split ';' | sls bin
-```
+````
 
-## 参考
+## refer to
 
-- [用 PowerShell 快速查看 PATH 环境变量](http://blog.vichamp.com/2014/08/05/quick-examine-path-env-variable-with-powershell/)
+- [Quick Examine PATH Environment Variables with PowerShell](http://blog.vichamp.com/2014/08/05/quick-examine-path-env-variable-with-powershell/)

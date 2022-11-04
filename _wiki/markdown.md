@@ -2,8 +2,8 @@
 layout: wiki
 title: Markdown
 cate1: Copywriting
-cate2: 
-description: Markdown 常用语法示例。
+cate2:
+description: An example of common Markdown syntax.
 keywords: Markdown
 mermaid: true
 sequence: true
@@ -17,154 +17,154 @@ mindmap: true
 * TOC
 {:toc}
 
-### 超链接
+### Hyperlink
 
-```
-[靠谱-ing](https://mazhuang.org)
-
-<https://mazhuang.org>
-```
-
-[靠谱-ing](https://mazhuang.org)  
+````
+[Reliable-ing](https://mazhuang.org)
 
 <https://mazhuang.org>
+````
 
-### 列表
+[Reliable-ing](https://mazhuang.org)
 
-```
-1. 有序列表项 1
+<https://mazhuang.org>
 
-2. 有序列表项 2
+### list
 
-3. 有序列表项 3
-```
+````
+1. Ordered list items 1
 
-1. 有序列表项 1
+2. Ordered list items 2
 
-2. 有序列表项 2
+3. Ordered list items 3
+````
 
-3. 有序列表项 3
+1. Ordered list items 1
 
-```
-* 无序列表项 1
+2. Ordered list items 2
 
-* 无序列表项 2
+3. Ordered list items 3
 
-* 无序列表项 3
-```
+````
+* unordered list entry 1
 
-* 无序列表项 1
+* unordered list entry 2
 
-* 无序列表项 2
+* unordered list entry 3
+````
 
-* 无序列表项 3
+* unordered list entry 1
 
-```
-- [x] 任务列表 1
-- [ ] 任务列表 2
-```
+* unordered list entry 2
 
-- [x] 任务列表 1
-- [ ] 任务列表 2
+* unordered list entry 3
 
-### 强调
+````
+- [x] Task List 1
+- [ ] Task List 2
+````
 
-```
-~~删除线~~
+- [x] Task List 1
+- [ ] Task List 2
 
-**加黑**
+### emphasize
 
-*斜体*
-```
+````
+~~strike out~~
 
-~~删除线~~
+**With black**
 
-**加黑**
+*italic*
+````
 
-*斜体*
+~~strike out~~
 
-### 标题
+**With black**
 
-```
-# 一级标题
-## 二级标题
-### 三级标题
-#### 四级标题
-##### 五级标题
-###### 六级标题
-```
+*italic*
 
-Tips: `#` 与标题中间要加空格。
+### Title
 
-### 表格
+````
+# first level title
+## Secondary title
+### Level 3 heading
+#### Level 4 heading
+##### Level 5 heading
+###### Level 6 heading
+````
 
-```
+Tips: Add a space between `#` and the title.
+
+### sheet
+
+````
 | HEADER1 | HEADER2 | HEADER3 | HEADER4 |
 | ------- | :------ | :-----: | ------: |
 | content | content | content | content |
-```
+````
 
 | HEADER1 | HEADER2 | HEADER3 | HEADER4 |
 | ------- | :------ | :-----: | ------: |
 | content | content | content | content |
 
-1. :----- 表示左对齐
-2. :----: 表示中对齐
-3. -----: 表示右对齐
+1. :----- means left-aligned
+2. :----: means center alignment
+3. -----: means right-aligned
 
-### 代码块
+### code block
 
-```python
+````python
 print 'Hello, World!'
-```
+````
 
 1. list item1
 
 2. list item2
 
-   ```python
+   ````python
    print 'hello'
-   ```
+   ````
 
-### 图片
+### picture
 
-```
-![本站favicon](/favicon.ico)
-```
+````
+![This site favicon](/favicon.ico)
+````
 
-![本站favicon](/favicon.ico)
+![This site favicon](/favicon.ico)
 
-### 锚点
+### Anchor
 
-```
+````
 * [Directory](#Directory)
-```
+````
 
 * [Directory](#Directory)
 
 ### Inline Attribute
 
-Span Inline Attribute 详情参考 <https://kramdown.gettalong.org/syntax.html#span-ials>
+Span Inline Attribute details reference <https://kramdown.gettalong.org/syntax.html#span-ials>
 
-Block Inline Attribute 详情参考 <https://kramdown.gettalong.org/syntax.html#block-ials>
+Block Inline Attribute details refer to <https://kramdown.gettalong.org/syntax.html#block-ials>
 
-给块/元素添加 class、id、内嵌样式等：
+Add classes, ids, inline styles, etc. to blocks/elements:
 
-```
-![本站favicon](/favicon.ico){:.center}
+````
+![This site favicon](/favicon.ico){:.center}
 
-Hello, *world*{:#world} 
+Hello, *world*{:#world}
 
-Hello, *world*{: style="color:red"} 
-```
+Hello, *world*{: style="color:red"}
+````
 
-![本站favicon](/favicon.ico){:.center}
+![This site favicon](/favicon.ico){:.center}
 
-Hello, *world*{:#world} 
+Hello, *world*{:#world}
 
-Hello, *world*{: style="color:red"} 
+Hello, *world*{: style="color:red"}
 
-结合自定义的样式，有些场景比较有用。
+Combined with custom styles, some scenarios are more useful.
 
 ### Emoji
 
@@ -186,16 +186,16 @@ sequenceDiagram
 
 ### sequence
 
-```sequence
+````sequence
 Andrew->China: Says Hello
 Note right of China: China thinks\nabout it
 China-->Andrew: How are you?
 Andrew->>China: I am good thanks!
-```
+````
 
 ### flowchart
 
-```flow
+````flow
 st=>start: Start
 e=>end
 op1=>operation: My Operation
@@ -207,7 +207,7 @@ io=>inputoutput: catch something...
 st->op1->cond
 cond(yes)->io->e
 cond(no)->sub1(right)->op1
-```
+````
 
 ### mathjax
 
@@ -218,13 +218,13 @@ $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
 ### mindmap
 
 ```mindmap
-# topic
+#topic
 ## topic2
 ### topic2.1
 ### topic2.2
 ## topic3
 <!--Note-->
-这是一个备注
+This is a remark
 <!--/Note-->
 ### topic3.1
 ### topic3.2
@@ -236,6 +236,6 @@ $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
 ### topic3.4
 ### topic3.5
 ### topic3.6
-```
+````
 
 [^1]: Here is the footnote 1 definition.

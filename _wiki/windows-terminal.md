@@ -3,60 +3,60 @@ layout: wiki
 title: Windows Terminal
 cate1: Tools
 cate2:
-description: 打造好用的 Windows Terminal
+description: Create a useful Windows Terminal
 keywords: Windows Terminal
 ---
 
-Windows Terminal 是微软打造的一款新的控制台终端，目前还在 Preview 版本，但经过一些配置已经可以用得不错。
+Windows Terminal is a new console terminal created by Microsoft. It is still in Preview version, but it can be used well after some configurations.
 
-## 自定义主题
+## custom themes
 
-可以到 <https://github.com/mbadolato/iTerm2-Color-Schemes> 的 windowsterminal 下寻找合适的主题。
+You can go to <https://github.com/mbadolato/iTerm2-Color-Schemes> to find a suitable theme under windowsterminal.
 
-## 自定义配置文件位置
+## custom configuration file location
 
-我想将配置文件放到 HOME Directory下，然后通过 git 管理，通过以下办法可以做到：
+I want to put the configuration file under HOME Directory, and then manage it through git, which can be done by the following methods:
 
-首先剪切 ~/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/RoamingState/profiles.json 文件到 ~/Windows-terminal-profiles.json，然后管理员权限打开 PowerShell，执行
+First cut ~/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/RoamingState/profiles.json file to ~/Windows-terminal-profiles.json, then open PowerShell with administrator privileges, execute
 
-```
+````
 New-Item -ItemType SymbolicLink -Path ~/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/RoamingState/profiles.json -Target ~/windows-terminal-profiles.json
-```
+````
 
-我的 Windows Terminal 文件见 <https://github.com/mzlogin/config-files/blob/master/windows-terminal-profiles.json>
+See my Windows Terminal files at <https://github.com/mzlogin/config-files/blob/master/windows-terminal-profiles.json>
 
-## 通过 git 管理 PowerShell 配置
+## Manage PowerShell configuration via git
 
-管理员权限打开 PowerShell，执行
+Open PowerShell with administrator privileges, execute
 
-```
+````
 New-Item -ItemType SymbolicLink -Path ~/Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1 -Target ~/powershell.ps1
-```
+````
 
-如果是使用 PowerShell 7 Preview，执行
+If using PowerShell 7 Preview, execute
 
-```
-New-Item -ItemType SymbolicLink -Path <我的文档>/PowerShell/Microsoft.PowerShell_profile.ps1 -Target <个人Directory>/powershell.ps1
-```
+````
+New-Item -ItemType SymbolicLink -Path <My Documents>/PowerShell/Microsoft.PowerShell_profile.ps1 -Target <personal Directory>/powershell.ps1
+````
 
-上面两个Directory需要使用绝对路径，不然会报错。
+The above two directories need to use absolute paths, otherwise an error will be reported.
 
-我的 PowerShell 配置见 <https://github.com/mzlogin/config-files/blob/master/powershell.ps1>
+See <https://github.com/mzlogin/config-files/blob/master/powershell.ps1> for my PowerShell configuration
 
-## 自定义快捷键
+## Customize shortcut keys
 
-比如在 json 配置文件的 globals -- keybindings 里添加如下内容，可以将 Windows Terminal 的复制粘贴映射为 ctrl+c 和 ctrl+v（这里真的要吐槽下，为什么不给默认映射上呢？）：
+For example, adding the following content to the globals -- keybindings of the json configuration file can map the copy and paste of Windows Terminal to ctrl+c and ctrl+v (I really want to complain here, why not give the default mapping?):
 
-*Updated 2020-04-26： 下面这些不用再手动映射了，新版本里都给了默认映射。*
+*Updated 2020-04-26: The following are no longer needed to be mapped manually. The new version has default mappings. *
 
-```json
+````json
 { "command": "copy", "keys": ["ctrl+c"] },
 { "command": "paste", "keys": ["ctrl+v"] }
-```
+````
 
-split pane 和 move focus within panes：
+split pane and move focus within panes:
 
-```json
+````json
 { "command" : "splitHorizontal", "keys": [ "alt+-" ] },
 { "command" : "splitVertical", "keys": [ "alt+\\" ] },
 { "command" : "closePane", "keys": [ "alt+w" ] },
@@ -64,6 +64,6 @@ split pane 和 move focus within panes：
 { "command" : "moveFocusRight", "keys": [ "alt+right" ] },
 { "command" : "moveFocusUp", "keys": [ "alt+up" ] },
 { "command" : "moveFocusDown", "keys": [ "alt+down" ] }
-```
+````
 
-参考：<https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md>
+Reference: <https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md>

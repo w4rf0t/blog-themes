@@ -3,275 +3,275 @@ layout: wiki
 title: Vim
 cate1: Tools
 cate2: Editor
-description: 个人最常用的 Vim 常用操作。
+description: Personal most commonly used Vim operations.
 keywords: Vim
 ---
 
-### 移动
+### move
 
-**以字（符）为单位**
+** in word (character) unit**
 
-| 功能 | 按键 |
+| Function | Button |
 |:-----|:-----|
-| 上   | `k`  |
-| 下   | `j`  |
-| 左   | `h`  |
-| 右   | `l`  |
+| on | `k` |
+| down | `j` |
+| Left | `h` |
+| right | `l` |
 
-**以单词为单位**
+**In words**
 
-| 功能                                   | 按键 |
-|:---------------------------------------|:-----|
-| 前一个单词尾                           | `ge` |
-| 后一个单词首                           | `w`  |
-| 本单词首（已在本词首则跳到前一单词首） | `b`  |
-| 本单词尾（已在本词尾则跳到后一单词尾） | `e`  |
+| Function | Button |
+|:--------------------------------------|:-----|
+| previous word ending | `ge` |
+| next word start | `w` |
+| Beginning of this word (if already at the beginning of this word, skip to the beginning of the previous word) | `b` |
+| At the end of this word (if it is at the end of this word, skip to the end of the next word) | `e` |
 
-**以屏幕为单位**
+**in units of screen**
  
-| 功能                     | 按键     |
-|:-------------------------|:---------|
-| 向下翻页                 | `CTRL-f` |
-| 向上翻页                 | `CTRL-b` |
-| 向下翻半页               | `CTRL-d` |
-| 向上翻半页               | `CTRL-u` |
-| 向上一行                 | `CTRL-y` |
-| 向下一行                 | `CTRL-e` |
-| 光标移到屏幕上方         | `H`      |
-| 光标移到屏幕中间         | `M`      |
-| 光标移到屏幕下方         | `L`      |
-| 光标所在位置移到屏幕上方 | `zt`     |
-| 光标所在位置移到屏幕中间 | `zz`     |
-| 光标所在位置移到屏幕下方 | `zb`     |
+| Function | Button |
+|:---------------|:---------|
+| Page down | `CTRL-f` |
+| Page up | `CTRL-b` |
+| Half page down | `CTRL-d` |
+| Half page up | `CTRL-u` |
+| Go up one line | `CTRL-y` |
+| Next line | `CTRL-e` |
+| Cursor moves to the top of the screen | `H` |
+| Move cursor to middle of screen | `M` |
+| Cursor moves to the bottom of the screen | `L` |
+| Move the cursor to the top of the screen | `zt` |
+| Move the cursor to the middle of the screen | `zz` |
+| The cursor position moves to the bottom of the screen | `zb` |
 
-**行号**
+**Line number**
 
-| 功能          | 按键                        |
-|:--------------|:----------------------------|
-| 跳到第 num 行 | `:num` 或 `numG` 或 `numgg` |
+| Function | Button |
+|:------------|:----------------------------|
+| skip to line num | `:num` or `numG` or `numgg` |
 
-**文件**
+**document**
 
-| 功能       | 按键 |
-|:-----------|:-----|
-| 跳到文件头 | `gg` |
-| 跳到文件尾 | `G`  |
+| Function | Button |
+|:------------|:-----|
+| skip to file header | `gg` |
+| Skip to end of file | `G` |
 
-### 编辑
+### edit
 
-#### 复制
+#### copy
 
-| 功能             | 按键  |
+| Function | Button |
 |:-----------------|:------|
-| 复制光标所在单词 | `yiw` |
-| 复制光标所在行   | `yy`  |
+| Copy the word under the cursor | `yiw` |
+| Copy the line where the cursor is | `yy` |
 
-#### 粘贴
+#### paste
 
-| 功能           | 按键 |
+| Function | Button |
 |:---------------|:-----|
-| 在光标之后粘贴 | `p`  |
-| 在光标之前粘贴 | `P`  |
+| Paste after cursor | `p` |
+| Paste before cursor | `P` |
 
-#### 剪切
+#### cut
 
-| 功能           | 按键 |
+| Function | Button |
 |:---------------|:-----|
-| 剪切选中区域   | `d`  |
-| 剪切光标所在行 | `dd` |
+| Cut selection | `d` |
+| Cut the line where the cursor is located | `dd` |
 
-#### 替换
+#### replace
 
-| 功能                              | 按键                |
-|:----------------------------------|:--------------------|
-| 将全文中的 str1 替换为 str2       | `:%s/str1/str2/g`   |
-| 将 1 到 5 行中的 str1 替换为 str2 | `:1,5s/str1/str2/g` |
+| Function | Button |
+|:--------------------------------|:------------ --------|
+| Replace str1 with str2 in full text | `:%s/str1/str2/g` |
+| Replace str1 with str2 in lines 1 to 5 | `:1,5s/str1/str2/g` |
 
-#### 大小写
+#### upper and lower case
 
-| 功能                 | 按键            |
-|:---------------------|:----------------|
-| 将选中内容大小写互换 | `~`             |
-| 将选中内容全转为小写 | `gu`            |
-| 将选中内容全转为大写 | `gU`            |
-| 将当前行变成小写     | `guu`           |
-| 将当前行变成大写     | `gUU`           |
-| 将匹配内容替换为大写 | `:%s/xxx/\U&/g` |
-| 将匹配内容替换为小写 | `:%s/xxx/\L&/g` |
+| Function | Button |
+|:--------------------|:----------------|
+| Swap the case of the selected content | `~` |
+| Convert the selection to lowercase | `gu` |
+| Convert the selection to uppercase | `gU` |
+| lowercase the current line | `guu` |
+| Uppercase the current line | `gUU` |
+| Replace matches with uppercase | `:%s/xxx/\U&/g` |
+| Replace matches with lowercase | `:%s/xxx/\L&/g` |
 
-注：`&` 代表正则表达式全部匹配项，另外还有 `\1`、'\2'、...、`\9` 代表第 1 到 9 个匹配项。
+Note: `&` represents all regular expression matches, and `\1`, '\2', ..., `\9` represent the 1st to 9th matches.
 
-### 选择
+### choose
 
-| 功能                 | 按键                |
-|:---------------------|:--------------------|
-| 选中上一次选择的区域 | `gv`                |
-| 选中括号内区域       | `vi{`、`vi[`、`vi(` |
+| Function | Button |
+|:--------------------|:--------------------|
+| Select the last selected area | `gv` |
+| Select bracketed area | `vi{`, `vi[`, `vi(` |
 
-### 搜索
+### search
 
-| 功能                 | 按键   |
-|:---------------------|:-------|
-| 向下查找字符串       | `/str` |
-| 向上查找字符串       | `?str` |
-| 查找下一个           | `n`    |
-| 查找上一个           | `N`    |
-| 向下查找光标所在单词 | `*`    |
-| 向下查找光标所在单词 | `#`    |
+| Function | Button |
+|:--------------------|:-------|
+| Find string down | `/str` |
+| Look up string | `?str` |
+| find next | `n` |
+| Find previous | `N` |
+| Go down to the word under the cursor | `*` |
+| Go down to the word under the cursor | `#` |
 
-### 正则表达式
+### Regular expressions
 
-| 功能           | 按键                |
-|:---------------|:--------------------|
-| 匹配单词左边界 | `\<`                |
-| 匹配单词右边界 | `\>`                |
-| 去重           | `:g/^\(.*\)$\n\1/d` |
+| Function | Button |
+|:---------------|:--------------------------------|
+| Match left word boundary | `\<` |
+| Match word right boundary | `\>` |
+| Deduplication | `:g/^\(.*\)$\n\1/d` |
 
-### 常用
+### Commonly used
 
-| 功能                    | 按键          |
-|:------------------------|:--------------|
-| 删除空行                | `:g/^$/d`     |
-| 撤销/UNDO               | `u`           |
-| 重做/REDO               | `C-r`         |
-| 统计行/单词/字符/字节数 | `g C-g`       |
-| 去掉 UTF-8 BOM          | `:set nobomb` |
-| 保留 UTF-8 BOM          | `:set bomb`   |
+| Function | Button |
+|:-------------------------|:-------------|
+| delete blank lines | `:g/^$/d` |
+| undo/UNDO | `u` |
+| redo/REDO | `C-r` |
+| Count lines/words/characters/bytes | `g C-g` |
+| Remove UTF-8 BOM | `:set nobomb` |
+| Keep UTF-8 BOM | `:set bomb` |
 
-### 全局
+### Global
 
-| 功能         | 按键 |
-|:-------------|:-----|
-| 退出         | `:q` |
-| 强制执行     | `!`  |
-| 执行外部命令 | `:!` |
+| Function | Button |
+|:------------|:-----|
+| quit | `:q` |
+| Enforce | `!` |
+| Execute external commands | `:!` |
 
-### 文件操作
+### file operations
 
-| 功能               | 按键      |
+| Function | Button |
 |:-------------------|:----------|
-| 打开               | `:e`      |
-| 打开文件对话框     | `:bro e`  |
-| 保存               | `:w`      |
-| 另存为对话框       | `:bro w`  |
-| 查看历史文件列表   | `:ol`     |
-| 查看并打开历史文件 | `:bro ol` |
-|重命名当前文件|`:f filename`|
+| open | `:e` |
+| Open file dialog | `:bro e` |
+| save | `:w` |
+| Save As Dialog | `:brow` |
+| View history file list | `:ol` |
+| View and open history files | `:bro ol` |
+|Rename current file|`:f filename`|
 
 ### vimdiff
 
-| 功能                   | 按键          |
-|:-----------------------|:--------------|
-| 移动到上一个不同处     | `[c`          |
-| 移动到下一个不同处     | `]c`          |
-| 该差异点使用当前文件的 | `dp`          |
-| 该差异点使用其它文件的 | `do`          |
-| 手动刷新重新比较       | `:diffupdate` |
+| Function | Button |
+|:-------------|:-------------|
+| Move to previous difference | `[c` |
+| move to next difference | `]c` |
+| This diff uses the current file's | `dp` |
+| This diff uses the | `do` | of the other file
+| Manual refresh re-diff | `:diffupdate` |
 
 ### Buffer
 
-| 功能                               | 按键     |
+| Function | Button |
 |:-----------------------------------|:---------|
-| 查看 Buffer 列表                   | `:ls`    |
-| 转到 Buffer 列表中的下一个 Buffer  | `:bn`    |
-| 转到 Buffer 列表中的上一个 Buffer  | `:bp`    |
-| 转到 Buffer 列表中的 num 号 Buffer | `:bnum`  |
-| 你之前待过的一个 Buffer            | `:b#`    |
-| 从 Buffer 列表中删除 num 号 Buffer | `:bdnum` |
+| View Buffer List | `:ls` |
+| Go to the next Buffer in the Buffer list | `:bn` |
+| Go to the previous Buffer in the Buffer list | `:bp` |
+| Go to Buffer number num in the Buffer list | `:bnum` |
+| A Buffer you were in before | `:b#` |
+| Remove Buffer number num from the Buffer list | `:bdnum` |
 
-### 组合命令
+### Combining commands
 
-可以使用 `|` 来组合命令，比如 `cmd1 | cmd2`。
+Commands can be combined using `|`, such as `cmd1 | cmd2`.
 
-### 代码
+### code
 
-| 功能                    | 按键                           |
-|:------------------------|:-------------------------------|
-| 格式化代码              | `gg=G`                         |
-| 去除 1-20 行首的行号    | `:1,20s/^\\s\*[0-9]\*\\s\*//g` |
-| 展开全部折叠            | `zR`                           |
-| 展开当前层级折叠        | `zr`                           |
-| 全部折叠                | `zM`                           |
-| 当前层级折叠            | `zm`                           |
-| 切换折叠/展开           | `za`                           |
-| 递归折叠/展开当前大区块 | `zA`                           |
-| 折叠当前区块            | `zc`                           |
-| 递归折叠当前大区块      | `zC`                           |
-| 展开当前区块            | `zo`                           |
-| 递归展开当前大区块      | `zO`                           |
-| 格式化 json 数据        | `:%!python -m json.tool`       |
-| 缩进当前行              | `>>`                           |
-| 反缩进当前行            | `<<`                           |
+| Function | Button |
+|:-------------------------|:---------------------- ---------|
+| Format code | `gg=G` |
+| Remove line numbers at the beginning of lines 1-20 | `:1,20s/^\\s\*[0-9]\*\\s\*//g` |
+| Expand Collapse All | `zR` |
+| Expand current level fold | `zr` |
+| Collapse all | `zM` |
+| current level collapse | `zm` |
+| Toggle collapse/expand | `za` |
+| Recursively collapse/expand the current large block | `zA` |
+| Collapse current block | `zc` |
+| Recursively fold the current large block | `zC` |
+| Expand current block | `zo` |
+| Recursively expand the current large block | `zO` |
+| format json data | `:%!python -m json.tool` |
+| Indent current line | `>>` |
+| Unindent current line | `<<` |
 
 ### modeline
 
-写法：
+Writing:
 
-```
+````
  vim: set ft=markdown:
  vim: ft=markdown
 
 // vim: noai:ts=4:sw=4
 /* vim: noai:ts=4:sw=4 */
-```
+````
 
-### 插件
+### Plugins
 
-#### CtrlP
+####CtrlP
 
-基础按键 `C-p`
+Basic keys `C-p`
 
-| 功能                               | 按键      |
+| Function | Button |
 |:-----------------------------------|:----------|
-| 刷新列表                           | `F5`      |
-| 切换文件/缓冲区/MRU                | `C-f/b`   |
-| 切换全路径搜索/文件名搜索          | `C-d`     |
-| 切换正则表达式模式                 | `C-r`     |
-| 上/下一个选项                      | `C-k/j`   |
-| 在新标签/垂直分割/水平分割打开文件 | `C-t/v/x` |
-| 历史选择记录的上/下一条            | `C-p/n`   |
-| 创建文件和它的父路径               | `C-y`     |
-| 标记并打开多个文件                 | `C-z C-o` |
-| 退出 CtrlP                         | `C-c`     |
+| Refresh list | `F5` |
+| switch file/buffer/MRU | `C-f/b` |
+| Toggle full path search/filename search | `C-d` |
+| Toggle regular expression mode | `C-r` |
+| Previous/next options | `C-k/j` |
+| Open file in new tab/vertical split/horizontal split | `C-t/v/x` |
+| Select the previous/next record in history | `C-p/n` |
+| Create a file and its parent path | `C-y` |
+| Mark and open multiple files | `C-z C-o` |
+| Exit CtrlP | `C-c` |
 
 #### LeaderF
 
-| 功能                               | 按键                   |
-|:-----------------------------------|:-----------------------|
-| 打开文件                           | `Leader-f`             |
-| 打开缓冲区                         | `Leader-b`             |
-| 打开 MRU                           | `Leader-m`（自定义的） |
-| 退出                               | `C-c`                  |
-| 切换模糊查找和正则查找             | `C-r`                  |
-| 粘贴                               | `C-v`                  |
-| 清空输入                           | `C-u`                  |
-| 上/下一个选项                      | `C-k/j`                |
-| 在新标签/垂直分割/水平分割打开文件 | `C-t/]/v`              |
-| 刷新列表                           | `F5`                   |
+| Function | Button |
+|:-----------------------------------|:------------ ------------|
+| Open file | `Leader-f` |
+| open buffer | `Leader-b` |
+| Open MRU | `Leader-m` (custom) |
+| exit | `C-c` |
+| Toggle between fuzzy search and regular search | `C-r` |
+| Paste | `C-v` |
+| Clear input | `C-u` |
+| Previous/next options | `C-k/j` |
+| Open file in new tab/vertical split/horizontal split | `C-t/]/v` |
+| Refresh list | `F5` |
 
 #### vim-table-mode
 
-| 功能           | 按键         |
+| Function | Button |
 |:---------------|:-------------|
-| 删除列         | `Leader-tdc` |
-| 删除行         | `Leader-tdd` |
-| 重新格式化表格 | `Leader-tr`  |
+| Delete column | `Leader-tdc` |
+| delete line | `Leader-tdd` |
+| Reformatting table | `Leader-tr` |
 
 #### markdown-preview.nvim
 
-| 功能     | 按键 |
+| Function | Button |
 |----------|------|
-| 预览     | `F5` |
-| 停止预览 | `F6` |
+| Preview | `F5` |
+| Stop preview | `F6` |
 
-导出 PDF：预览以后，使用浏览器的「打印」功能，打印机选「另存为 PDF」，取消「页眉和页脚」，然后点保存即可。
+Export PDF: After previewing, use the "Print" function of the browser, select "Save as PDF" for the printer, cancel "Header and Footer", and then click Save.
 
-### 命令行
+### Command Line
 
-打开 Vim 时跳转到指定行：
+Jump to a specified line when opening Vim:
 
-```
+````
 vim +[num] filename
-```
+````
 
-num 表示行号，不填则跳转到文件末尾。
+num indicates the line number, if not filled, it will jump to the end of the file.
